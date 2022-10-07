@@ -30,7 +30,7 @@
                     $cola = array();
                 }
 
-                // Pintamos la cola
+                // Pinta la cola
                 function pintarCola($cola) {
                     for($i=0; $i<count($cola); $i++) {
                         echo $cola[$i] . " ";
