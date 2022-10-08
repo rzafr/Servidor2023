@@ -5,16 +5,16 @@
       <div class="col-md-8 themed-grid-col">
 		<div class="flex-shrink-0 p-3 bg-white">
 
-            <h1>TEMA 1</h1>
-            <h2>PRÁCTICA 1</h2>
-            <h3>EJERCICIO 10</h3>
+            <h2>TEMA 2: PROGRAMACIÓN ESTRUCTURADA PHP</h2>
+            <h3>PRÁCTICA 1 - EJERCICIO 10</h3>
 
             <?php
                
                $numeros = [];
 
-               for ($i=0; $i<10; $i++) {
-                    $numeros[] = $i+1;
+               // Rellenamos un array de 10 números enteros, con los 10 primeros números naturales
+               for ($i=1; $i<=10; $i++) {
+                    $numeros[] = $i;
                }
 
                // Pintamos el array

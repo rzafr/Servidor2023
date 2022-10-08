@@ -5,9 +5,8 @@
       <div class="col-md-8 themed-grid-col">
 		<div class="flex-shrink-0 p-3 bg-white">
 
-            <h1>TEMA 1</h1>
-            <h2>PRÁCTICA 1</h2>
-            <h3>EJERCICIO 12</h3>
+            <h2>TEMA 2: PROGRAMACIÓN ESTRUCTURADA PHP</h2>
+            <h3>PRÁCTICA 1 - EJERCICIO 12</h3>
             
             <?php
               
@@ -21,14 +20,16 @@
               $palabra = "Azul";
 
               if (array_key_exists($palabra, $diccionario)) {
-                    echo $palabra . " se dice " . $diccionario[$palabra] . " en inglés<br>";
+                    echo $palabra . " se dice " . $diccionario[$palabra] . " en inglés<br><br>";
               } else {
-                    echo "La palabra " . $palabra . " no está en el diccionario<br>";
+                    echo "La palabra " . $palabra . " no está en el diccionario<br><br>";
               }
 
               ksort($diccionario);
               
               $clavesOrdenadas = array_keys($diccionario);
+
+              echo "Diccionario ordenado en español:<br>";
 
               foreach ($clavesOrdenadas as $clavesOrdenadas) {
                     echo $clavesOrdenadas . "<br>";

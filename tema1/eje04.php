@@ -5,15 +5,14 @@
       <div class="col-md-8 themed-grid-col">
 		<div class="flex-shrink-0 p-3 bg-white">
 
-            <h1>TEMA 1</h1>
-            <h2>PRÁCTICA 1</h2>
-            <h3>EJERCICIO 4</h3>
+            <h2>TEMA 2: PROGRAMACIÓN ESTRUCTURADA PHP</h2>
+            <h3>PRÁCTICA 1 - EJERCICIO 4</h3>
 
             <?php
 
                 $a = 3; $b = 5; $c = 1;
                 
-                echo "Ecuación de 2º grado: " . $a . "x2 + " . $b . "x + " . $c . " = 0<br>";
+                echo "Ecuación de 2º grado: " . $a . "x<sup>2</sup> + " . $b . "x + " . $c . " = 0<br>";
 
                 $solucion1 = (-$b + sqrt(pow($b, 2) - 4*$a*$c)) / 2*$a;
                 $solucion2 = (-$b - sqrt(pow($b, 2) - 4*$a*$c)) / 2*$a;

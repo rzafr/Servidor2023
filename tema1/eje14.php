@@ -5,11 +5,15 @@
       <div class="col-md-8 themed-grid-col">
 		<div class="flex-shrink-0 p-3 bg-white">
 
-            <h1>TEMA 1</h1>
-            <h2>PRÁCTICA 1</h2>
-            <h3>EJERCICIO 14</h3>
+            <h2>TEMA 2: PROGRAMACIÓN ESTRUCTURADA PHP</h2>
+            <h3>PRÁCTICA 1 - EJERCICIO 14</h3>
             
             <?php
+
+                // Muestra el número de alumnos suspensos para usar con array_filter
+                function suspenso($nota) {
+                    return $nota < 5;
+                }
               
                 $notasAlumnos = array(
                     array("nombre" => "Marcos", "materia" => "Matemáticas", "nota" => 6),
@@ -32,55 +36,19 @@
                     echo $valor["nombre"] . " - " . $valor["materia"] . " - " . $valor["nota"] . "<br>";
                 }   
 
-                echo "-------------------------";
+                // Mostramos las notas ordenadas en orden descendente por nombre
+                array_multisort(array_column($notasAlumnos,"nombre"), SORT_ASC, array_column($notasAlumnos,"nota"), SORT_DESC, $notasAlumnos);
 
-
-                // Mostramos las notas en orden descendente por nombre
-                array_multisort(array_column($notasAlumnos,"nombre"), SORT_DESC, array_column($notasAlumnos,"nota"), $notasAlumnos);
-
+                echo "<br>Notas ordenadas en orden descendente por nombre de asignatura:<br>";
                 foreach($notasAlumnos as $valor) {
                     echo $valor["nombre"] . " - " . $valor["materia"] . " - " . $valor["nota"] . "<br>";
                 }   
 
                 // Mostramos la nota media del curso
-                echo array_sum(array_column($notasAlumnos,"nota")) / count($notasAlumnos);
+                echo "<br>La media del curso es: " . array_sum(array_column($notasAlumnos,"nota")) / count($notasAlumnos);
 
                 // Mostramos el número de alumnos suspensos
-                function suspenso($nota) {
-                    return $nota<5;
-                }
-                echo "<br>";
-                echo count(array_filter(array_column($notasAlumnos,"nota"),"suspenso"));
-
-
-
-            //   foreach ($notasAlumnos as $clave => $valor) {
-            //       $aux[$clave] = $valor[2];
-            //   }
-
-            //   array_multisort($aux, SORT_DESC, $notasAlumnos);
-
-            //   //Ordenar las notas por nombre
-            //   //array_multisort(array_column($notas,"nombre"),SORT_DESC,array_column($notas, "nota"), $notas)
-
-            //   foreach ($notasAlumnos as $clave => $valor) {
-            //       echo $valor[0].' '.$valor[1].' '.$valor[2].'<br/>';//No coge las materiasssssssssssssssssssss
-            //   }
-
-            //   foreach ($notasAlumnos as $clave => $valor) {
-            //       $aux[$clave] = $valor[2];
-            //   }
-
-            //   array_multisort($aux, SORT_ASC, $notasAlumnos);
-
-             
-            // // mostrar las notas ordenadas en orden descendente por alumno
-
-
-            // echo array_sum(array_column($notas, "nota")) / count($notas);
-
-            //Probar array_filter para ver los suspensos haciendolo con funcion (se le pasa el nombre de la función como parametro aunque
-            //esto es antiguo)
+                echo "<br>El número de alumnos suspensos es: " . count(array_filter(array_column($notasAlumnos,"nota"),"suspenso"));
 
             ?>
 
