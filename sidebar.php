@@ -33,7 +33,7 @@
 					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema2" aria-expanded="true">
 					TEMA 2
 					</button>
-					<div class="collapse show" id="tema2">
+					<div class="collapse" id="tema2">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 						<li><a href="/tema2/eje01.php" class="link-dark rounded">Ejercicio 1</a></li>
 						<li><a href="/tema2/eje02.php" class="link-dark rounded">Ejercicio 2</a></li>
@@ -51,9 +51,10 @@
 					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema3" aria-expanded="false">
 					TEMA 3
 					</button>
-					<div class="collapse" id="tema3">
+					<div class="collapse show" id="tema3">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-						<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
+						<li><a href="/tema3/cookies/index.php" class="link-dark rounded">Cookies</a></li>
+						<li><a href="/tema3/cookiesEncrypt/index.php" class="link-dark rounded">Cookies encriptadas</a></li>
 						<li><a href="/tema3/proyectos/proyectos.php" class="link-dark rounded">Proyectos</a></li>
 					</ul>
 					</div>
