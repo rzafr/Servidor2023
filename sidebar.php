@@ -55,7 +55,8 @@
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 						<li><a href="/tema3/cookies/index.php" class="link-dark rounded">Cookies</a></li>
 						<li><a href="/tema3/cookiesEncrypt/index.php" class="link-dark rounded">Cookies encriptadas</a></li>
-						<li><a href="/tema3/proyectos/proyectos.php" class="link-dark rounded">Proyectos</a></li>
+						<li><a href="/tema3/proyectos/login.php" class="link-dark rounded">Proyectos</a></li>
+						<li><a href="/tema3/ahorcado/index.php" class="link-dark rounded">Ahorcado</a></li>
 					</ul>
 					</div>
 				</li>
