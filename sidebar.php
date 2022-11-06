@@ -30,7 +30,7 @@
 					</div>
 				</li>
 				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema2" aria-expanded="true">
+					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema2" aria-expanded="false">
 					TEMA 2
 					</button>
 					<div class="collapse" id="tema2">
@@ -48,7 +48,7 @@
 				</li>
 				
 				<li class="mb-1">
-					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema3" aria-expanded="false">
+					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema3" aria-expanded="true">
 					TEMA 3
 					</button>
 					<div class="collapse show" id="tema3">
@@ -56,6 +56,7 @@
 						<li><a href="/tema3/cookies/index.php" class="link-dark rounded">Cookies</a></li>
 						<li><a href="/tema3/cookiesEncrypt/index.php" class="link-dark rounded">Cookies encriptadas</a></li>
 						<li><a href="/tema3/proyectos/login.php" class="link-dark rounded">Proyectos</a></li>
+						<li><a href="/tema3/ahorcado/index.php" class="link-dark rounded">Ahorcado</a></li>
 					</ul>
 					</div>
 				</li>
