@@ -13,9 +13,17 @@
             VistaPrestamosTodos::render($prestamos);
         }
 
-        public static function mostrarPrestamo($dni) {
+        public static function buscarPrestamosDNI($dni) {
             //LLamar al modelo para obtener los objetos de prestamos con ese DNI
-            $prestamos = PrestamoBD::buscarPrestamos($dni);
+            $prestamos = PrestamoBD::buscarPrestamosDNI($dni);
+
+            // Llama a la vista para pintar los prestamos
+            VistaPrestamosTodos::render($prestamos);
+        }
+
+        public static function buscarPrestamosEstado($estado) {
+            //LLamar al modelo para obtener los objetos de prestamos con ese DNI
+            $prestamos = PrestamoBD::buscarPrestamosEstado($estado);
 
             // Llama a la vista para pintar los prestamos
             VistaPrestamosTodos::render($prestamos);
@@ -40,10 +48,10 @@
             ControladorPrestamo::mostrarPrestamos();
         }
 
-        public static function eliminarPrestamo($id) {
-            PrestamoBD::deletePrestamo($id);
-            ControladorPrestamo::mostrarPrestamos();
-        }
+        // public static function eliminarPrestamo($id) {
+        //     PrestamoBD::deletePrestamo($id);
+        //     ControladorPrestamo::mostrarPrestamos();
+        // }
     }
 
 

@@ -7,16 +7,41 @@
             include("./vistas/cabecera.php");
 
             echo "<div class='row justify-content-end p-3'>";
-            echo "<div class='col-10'>";
-            echo "<form action='enrutador.php?accion=buscarDNI' method='get'>";
-            echo "<div class='row'><div class='col-6'>";
-            echo "<input type='text' name='buscador' class='form-control'>";
-            echo "</div>";
-            echo "<div class='col-2'>";
-            echo "<input type='submit' name='buscar' value='Buscar' class='form-control btn btn-success'>";
-            echo "</div></div>";
-            echo "</form>";
-            echo "</div>";
+                echo "<div class='col-10'>";
+                    echo "<form action='enrutador.php' method='get'>";
+                        echo "<div class='row'>";
+                            echo "<div class='col-2'>";
+                                echo "<input type='text' name='buscadorDNI' class='form-control' placeholder='Buscar DNI'>";
+                            echo "</div>";
+                            echo "<div class='col-2'>";
+                                echo "<input type='submit' name='buscarDNI' value='Buscar' class='form-control btn btn-success'>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</form>";
+                    echo "<form action='enrutador.php' method='get'>";
+                        echo "<div class='row'>";
+                            echo "<div class='col-2'>";
+                                echo "<input type='text' name='buscadorEstado' class='form-control' placeholder='Buscar estado'>";
+                            echo "</div>";
+                            echo "<div class='col-2'>";
+                                echo "<input type='submit' name='buscarEstado' value='Buscar' class='form-control btn btn-success'>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</form>";
+                echo "</div>";
+            echo "</div>";//HAY QUE RECONTAR LOS DIV'S
+
+                    // echo "<div class='col-10'>";
+                    // echo "<form action='enrutador.php' method='get'>";
+                    
+                    // echo "<div class='row'><div class='col-2'>";
+                    // echo "<input type='text' name='buscadorEstado' class='form-control' placeholder='Buscar por DNI'>";
+                    // echo "</div>";
+                    // echo "<div class='col-2'>";
+                    // echo "<input type='submit' name='buscarEstado' value='Buscar' class='form-control btn btn-success'>";
+                    // echo "</div></div>";
+                    // echo "</form>";
+                    // echo "</div>";
             
             
             echo    '<div class="card shadow mb-4 mt-5">
@@ -60,7 +85,7 @@
                                         <td>".$prestamo->titulo."</td>
                                         <td>".$prestamo->dni."</td>
                                         <td>".$prestamo->getFechaInicio()."</td>
-                                        <td><form method='post' class='user' action='./enrutador.php'>
+                                        <td><form method='get' class='user' action='./enrutador.php'>
                                             <div class='form-group'>
                                                 <input type='date' name='fechaFin' class='form-control form-control-user'
                                                     id='fechaFin' value=".$prestamo->getFechaFin().">
@@ -95,10 +120,7 @@
                                                 <input type='hidden' name='accion' class='form-control form-control-user'
                                                     value='modificarPrestamo'>
                                             </div>
-                                            <div class='form-group'>
-                                                <input type='hidden' name='accion' class='form-control form-control-user'
-                                                    value='eliminarPrestamo'>
-                                            </div>
+                                            
                                             <div class='form-group'>
                                                 <input type='hidden' name='id' class='form-control form-control-user'
                                                     value=".$prestamo->getId().">
@@ -108,7 +130,7 @@
                                             <input type='submit' name='modificarPrestamo' value='Modificar' class='btn btn-success btn-user btn-block'>
                                         </td>
                                         <td>
-                                            <input type='submit' name='eliminarPrestamo' value='Eliminar' class='btn btn-danger btn-user btn-block'>
+                                            
                                             </form>
                                         </td>";
                                 echo "</tr>";
@@ -130,4 +152,14 @@
     //         Eliminar
     //     </a>
     // </button>
+    // // Sacado del td de modificar-><input type='submit' name='modificarPrestamo' value='Modificar' class='btn btn-success btn-user btn-block'>
+    // Sacado del td de eliminar-> <input type='submit' name='eliminarPrestamo' value='Eliminar' class='btn btn-danger btn-user btn-block'>
+
+
+    //                                          <div class='form-group'>
+    //                                             <input type='hidden' name='accion' class='form-control form-control-user'
+    //                                                 value='eliminarPrestamo'>
+    //                                         </div>
+
+
 ?>

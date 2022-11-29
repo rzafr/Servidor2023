@@ -76,20 +76,30 @@
                 ControladorPrestamo::modificarPrestamo($id, $fechaFin, $estado);
             }
 
-            if ($_REQUEST['accion'] == "eliminarPrestamo") {
-                $id = $_REQUEST['id'];
+            // Al intentar poner eliminar se tuerce todoooooooooooooooooooooooooooo
+            // if ($_REQUEST['accion'] == "eliminarPrestamo") {
+            //     $id = $_REQUEST['id'];
 
-                ControladorPrestamo::eliminarPrestamo($id);
-            }
+            //     ControladorPrestamo::eliminarPrestamo($id);
+            // }
 
             if ($_REQUEST['accion'] == "buscarDNI") {
-                $dni = filtrado($_REQUEST['buscador']);
                 
-                ControladorPrestamo::mostrarPrestamo($dni);
             }
         }
 
-        
+        if (isset($_REQUEST['buscarDNI'])) {
+            $dni = filtrado($_REQUEST['buscadorDNI']);
+                
+            ControladorPrestamo::buscarPrestamosDNI($dni);
+        }
+
+        if (isset($_REQUEST['buscarEstado'])) {
+            $estado = filtrado($_REQUEST['buscadorEstado']);
+                
+            ControladorPrestamo::buscarPrestamosEstado($estado);
+        }
+
     }
 
 
