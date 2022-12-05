@@ -34,8 +34,7 @@
         /**
          * Get the value of id
          */ 
-        public function getId()
-        {
+        public function getId() {
                 return $this->id;
         }
 
@@ -44,8 +43,7 @@
          *
          * @return  self
          */ 
-        public function setId($id)
-        {
+        public function setId($id) {
                 $this->id = $id;
 
                 return $this;
@@ -54,8 +52,7 @@
         /**
          * Get the value of isbn
          */ 
-        public function getIsbn()
-        {
+        public function getIsbn() {
                 return $this->isbn;
         }
 
@@ -64,8 +61,7 @@
          *
          * @return  self
          */ 
-        public function setIsbn($isbn)
-        {
+        public function setIsbn($isbn) {
                 $this->isbn = $isbn;
 
                 return $this;
@@ -74,8 +70,7 @@
         /**
          * Get the value of titulo
          */ 
-        public function getTitulo()
-        {
+        public function getTitulo() {
                 return $this->titulo;
         }
 
@@ -84,8 +79,7 @@
          *
          * @return  self
          */ 
-        public function setTitulo($titulo)
-        {
+        public function setTitulo($titulo) {
                 $this->titulo = $titulo;
 
                 return $this;
@@ -94,8 +88,7 @@
         /**
          * Get the value of subtitulo
          */ 
-        public function getSubtitulo()
-        {
+        public function getSubtitulo() {
                 return $this->subtitulo;
         }
 
@@ -104,8 +97,7 @@
          *
          * @return  self
          */ 
-        public function setSubtitulo($subtitulo)
-        {
+        public function setSubtitulo($subtitulo) {
                 $this->subtitulo = $subtitulo;
 
                 return $this;
@@ -114,8 +106,7 @@
         /**
          * Get the value of descripcion
          */ 
-        public function getDescripcion()
-        {
+        public function getDescripcion() {
                 return $this->descripcion;
         }
 
@@ -124,8 +115,7 @@
          *
          * @return  self
          */ 
-        public function setDescripcion($descripcion)
-        {
+        public function setDescripcion($descripcion) {
                 $this->descripcion = $descripcion;
 
                 return $this;
@@ -134,8 +124,7 @@
         /**
          * Get the value of autor
          */ 
-        public function getAutor()
-        {
+        public function getAutor() {
                 return $this->autor;
         }
 
@@ -144,8 +133,7 @@
          *
          * @return  self
          */ 
-        public function setAutor($autor)
-        {
+        public function setAutor($autor) {
                 $this->autor = $autor;
 
                 return $this;
@@ -154,8 +142,7 @@
         /**
          * Get the value of editorial
          */ 
-        public function getEditorial()
-        {
+        public function getEditorial() {
                 return $this->editorial;
         }
 
@@ -164,8 +151,7 @@
          *
          * @return  self
          */ 
-        public function setEditorial($editorial)
-        {
+        public function setEditorial($editorial) {
                 $this->editorial = $editorial;
 
                 return $this;
@@ -174,8 +160,7 @@
         /**
          * Get the value of categoria
          */ 
-        public function getCategoria()
-        {
+        public function getCategoria() {
                 return $this->categoria;
         }
 
@@ -184,8 +169,7 @@
          *
          * @return  self
          */ 
-        public function setCategoria($categoria)
-        {
+        public function setCategoria($categoria) {
                 $this->categoria = $categoria;
 
                 return $this;
@@ -194,8 +178,7 @@
         /**
          * Get the value of imgPortada
          */ 
-        public function getImgPortada()
-        {
+        public function getImgPortada() {
                 return $this->imgPortada;
         }
 
@@ -204,8 +187,7 @@
          *
          * @return  self
          */ 
-        public function setImgPortada($imgPortada)
-        {
+        public function setImgPortada($imgPortada) {
                 $this->imgPortada = $imgPortada;
 
                 return $this;
@@ -214,8 +196,7 @@
         /**
          * Get the value of numTotal
          */ 
-        public function getNumTotal()
-        {
+        public function getNumTotal() {
                 return $this->numTotal;
         }
 
@@ -224,8 +205,7 @@
          *
          * @return  self
          */ 
-        public function setNumTotal($numTotal)
-        {
+        public function setNumTotal($numTotal) {
                 $this->numTotal = $numTotal;
 
                 return $this;
@@ -234,8 +214,7 @@
         /**
          * Get the value of numDispo
          */ 
-        public function getNumDispo()
-        {
+        public function getNumDispo() {
                 return $this->numDispo;
         }
 
@@ -244,8 +223,7 @@
          *
          * @return  self
          */ 
-        public function setNumDispo($numDispo)
-        {
+        public function setNumDispo($numDispo) {
                 $this->numDispo = $numDispo;
 
                 return $this;

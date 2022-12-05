@@ -31,8 +31,7 @@
         /**
          * Get the value of id
          */ 
-        public function getId()
-        {
+        public function getId() {
                 return $this->id;
         }
 
@@ -41,8 +40,7 @@
          *
          * @return  self
          */ 
-        public function setId($id)
-        {
+        public function setId($id) {
                 $this->id = $id;
 
                 return $this;
@@ -51,8 +49,7 @@
         /**
          * Get the value of dni
          */ 
-        public function getDni()
-        {
+        public function getDni() {
                 return $this->dni;
         }
 
@@ -61,8 +58,7 @@
          *
          * @return  self
          */ 
-        public function setDni($dni)
-        {
+        public function setDni($dni) {
                 $this->dni = $dni;
 
                 return $this;
@@ -71,8 +67,7 @@
         /**
          * Get the value of nombre
          */ 
-        public function getNombre()
-        {
+        public function getNombre() {
                 return $this->nombre;
         }
 
@@ -81,8 +76,7 @@
          *
          * @return  self
          */ 
-        public function setNombre($nombre)
-        {
+        public function setNombre($nombre) {
                 $this->nombre = $nombre;
 
                 return $this;
@@ -91,8 +85,7 @@
         /**
          * Get the value of apellidos
          */ 
-        public function getApellidos()
-        {
+        public function getApellidos() {
                 return $this->apellidos;
         }
 
@@ -101,8 +94,7 @@
          *
          * @return  self
          */ 
-        public function setApellidos($apellidos)
-        {
+        public function setApellidos($apellidos) {
                 $this->apellidos = $apellidos;
 
                 return $this;
@@ -111,8 +103,7 @@
         /**
          * Get the value of edad
          */ 
-        public function getEdad()
-        {
+        public function getEdad() {
                 return $this->edad;
         }
 
@@ -121,8 +112,7 @@
          *
          * @return  self
          */ 
-        public function setEdad($edad)
-        {
+        public function setEdad($edad) {
                 $this->edad = $edad;
 
                 return $this;
@@ -131,8 +121,7 @@
         /**
          * Get the value of direccion
          */ 
-        public function getDireccion()
-        {
+        public function getDireccion() {
                 return $this->direccion;
         }
 
@@ -141,8 +130,7 @@
          *
          * @return  self
          */ 
-        public function setDireccion($direccion)
-        {
+        public function setDireccion($direccion) {
                 $this->direccion = $direccion;
 
                 return $this;
@@ -151,8 +139,7 @@
         /**
          * Get the value of poblacion
          */ 
-        public function getPoblacion()
-        {
+        public function getPoblacion() {
                 return $this->poblacion;
         }
 
@@ -161,8 +148,7 @@
          *
          * @return  self
          */ 
-        public function setPoblacion($poblacion)
-        {
+        public function setPoblacion($poblacion) {
                 $this->poblacion = $poblacion;
 
                 return $this;
@@ -171,8 +157,7 @@
         /**
          * Get the value of telefono
          */ 
-        public function getTelefono()
-        {
+        public function getTelefono() {
                 return $this->telefono;
         }
 
@@ -181,8 +166,7 @@
          *
          * @return  self
          */ 
-        public function setTelefono($telefono)
-        {
+        public function setTelefono($telefono) {
                 $this->telefono = $telefono;
 
                 return $this;
@@ -191,8 +175,7 @@
         /**
          * Get the value of email
          */ 
-        public function getEmail()
-        {
+        public function getEmail() {
                 return $this->email;
         }
 
@@ -201,8 +184,7 @@
          *
          * @return  self
          */ 
-        public function setEmail($email)
-        {
+        public function setEmail($email) {
                 $this->email = $email;
 
                 return $this;

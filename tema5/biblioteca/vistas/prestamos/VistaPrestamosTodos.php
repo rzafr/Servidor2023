@@ -2,46 +2,41 @@
 
     class VistaPrestamosTodos {
 
+        /**
+         * Pinta la tabla de prestamos y los buscadores de la pagina principal
+         */
         public static function render($prestamos) {
 
             include("./vistas/cabecera.php");
 
             echo "<div class='row justify-content-end p-3'>";
                 echo "<div class='col-10'>";
-                    echo "<form action='enrutador.php' method='get'>";
-                        echo "<div class='row'>";
-                            echo "<div class='col-2'>";
-                                echo "<input type='text' name='buscadorDNI' class='form-control' placeholder='Buscar DNI'>";
-                            echo "</div>";
-                            echo "<div class='col-2'>";
+                    echo "<div class='row'>";
+                        echo "<div class='col-2'>";
+                            echo "<form action='enrutador.php' method='get'>";
+                                echo "<input type='text' name='buscadorDNI' class='form-control' placeholder='Buscar por DNI'>";
+                        echo "</div>";
+                        echo "<div class='col-2'>";
                                 echo "<input type='submit' name='buscarDNI' value='Buscar' class='form-control btn btn-success'>";
-                            echo "</div>";
+                            echo "</form>";
                         echo "</div>";
-                    echo "</form>";
-                    echo "<form action='enrutador.php' method='get'>";
-                        echo "<div class='row'>";
-                            echo "<div class='col-2'>";
-                                echo "<input type='text' name='buscadorEstado' class='form-control' placeholder='Buscar estado'>";
-                            echo "</div>";
-                            echo "<div class='col-2'>";
+                        echo "<div class='col-2'>";
+                            echo "<form action='enrutador.php' method='get'>";
+                                echo "<select name='buscadorEstado' class='form-control' id='estado'>";
+                                    echo "<option value='' selected>Buscar por estado</option>
+                                        <option value='activo'>Activo</option>
+                                        <option value='devuelto'>Devuelto</option>
+                                        <option value='sobrepasado1Mes'>Sobrepasado un mes</option>
+                                        <option value='sobrepasado1Year'>Sobrepasado un año</option>";
+                                echo "</select>";
+                        echo "</div>";
+                        echo "<div class='col-2'>";
                                 echo "<input type='submit' name='buscarEstado' value='Buscar' class='form-control btn btn-success'>";
-                            echo "</div>";
+                            echo "</form>";
                         echo "</div>";
-                    echo "</form>";
+                    echo "</div>";
                 echo "</div>";
-            echo "</div>";//HAY QUE RECONTAR LOS DIV'S
-
-                    // echo "<div class='col-10'>";
-                    // echo "<form action='enrutador.php' method='get'>";
-                    
-                    // echo "<div class='row'><div class='col-2'>";
-                    // echo "<input type='text' name='buscadorEstado' class='form-control' placeholder='Buscar por DNI'>";
-                    // echo "</div>";
-                    // echo "<div class='col-2'>";
-                    // echo "<input type='submit' name='buscarEstado' value='Buscar' class='form-control btn btn-success'>";
-                    // echo "</div></div>";
-                    // echo "</form>";
-                    // echo "</div>";
+            echo "</div>";
             
             
             echo    '<div class="card shadow mb-4 mt-5">
@@ -49,12 +44,7 @@
                             <h6 class="m-0 font-weight-bold text-success">Prestamos de la biblioteca</h6>
                         </div>
                         <div class="card-body">';
-
-                        
-                        
-
                         echo '<div class="table-responsive">';
-
                         echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>";
                         echo "<thead>";
                             echo "<tr>";
@@ -87,7 +77,7 @@
                                         <td>".$prestamo->getFechaInicio()."</td>
                                         <td><form method='get' class='user' action='./enrutador.php'>
                                             <div class='form-group'>
-                                                <input type='date' name='fechaFin' class='form-control form-control-user'
+                                                <input type='date' name='fechaFin' class='form-control'
                                                     id='fechaFin' value=".$prestamo->getFechaFin().">
                                             </div></td>
                                         <td><div class='form-group'>
@@ -128,10 +118,12 @@
                                             </td>
                                         <td>
                                             <input type='submit' name='modificarPrestamo' value='Modificar' class='btn btn-success btn-user btn-block'>
+                                            </form>
                                         </td>
                                         <td>
-                                            
-                                            </form>
+                                            <a class='btn btn-danger' href='./enrutador.php?accion=eliminarPrestamo&id=".$prestamo->getId()." role='button'>
+                                                Eliminar
+                                            </a>
                                         </td>";
                                 echo "</tr>";
                             }
@@ -145,21 +137,5 @@
         }
 
     }
-
-    // Botón de eliminar
-    // <button>
-    //     <a href='./verProyecto.php?accion=ver&id=".$prestamo->getId()."'>
-    //         Eliminar
-    //     </a>
-    // </button>
-    // // Sacado del td de modificar-><input type='submit' name='modificarPrestamo' value='Modificar' class='btn btn-success btn-user btn-block'>
-    // Sacado del td de eliminar-> <input type='submit' name='eliminarPrestamo' value='Eliminar' class='btn btn-danger btn-user btn-block'>
-
-
-    //                                          <div class='form-group'>
-    //                                             <input type='hidden' name='accion' class='form-control form-control-user'
-    //                                                 value='eliminarPrestamo'>
-    //                                         </div>
-
 
 ?>

@@ -4,6 +4,9 @@
 
         private static $conexion;
 
+        /**
+         * Conecta con la base de datos
+         */
         public static function conectar($bd="biblioteca", $usuario="user", $password="user", $host="mariadb") {
 
             try {

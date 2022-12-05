@@ -1,7 +1,8 @@
 <?php
     
     // AUTOLOAD
-    function autocarga($clase){ 
+    function autocarga($clase) {
+
         $ruta = "./controladores/$clase.php"; 
         if (file_exists($ruta)){ 
           include_once $ruta; 
@@ -17,22 +18,13 @@
             include_once $ruta; 
         }
 
-        // $ruta = "./vistas/libros/$clase.php"; 
-        // if (file_exists($ruta)){ 
-        //     include_once $ruta; 
-        // }
-
-        // $ruta = "./vistas/usuarios/$clase.php"; 
-        // if (file_exists($ruta)){ 
-        //     include_once $ruta; 
-        // }
     }
 
     spl_autoload_register("autocarga");
 
 
     // Filtra los campos del formulario
-    function filtrado($datos){
+    function filtrado($datos) {
         $datos = trim($datos); // Elimina espacios antes y despues de los datos
         $datos = stripslashes($datos); // Elimina backslashes \
         $datos = htmlspecialchars($datos); // Traduce caracteres especiales en entidades HTML
@@ -40,6 +32,7 @@
         return $datos;
     }
 
+    // Comprobamos acciones
     if ($_REQUEST) {
         if (isset($_REQUEST['accion'])) {
 
@@ -48,16 +41,12 @@
                 ControladorPrestamo::mostrarPrestamos();
             }
 
-            // //Ver película en detalle
-            // if ($_REQUEST['accion'] == "verPelicula") {
-            //     $id = filtrado($_REQUEST['id']);
-            //     ControladorPelicula::mostrarPelicula($id);
-            // }
-
+            // Mostramos formulario prestamo nuevo
             if ($_REQUEST['accion'] == "verFormularioNuevoPrestamo") {
                 ControladorPrestamo::mostrarFormularioNuevoPrestamo();
             }
 
+            // Insertamos prestamo nuevo en la base de datos
             if ($_REQUEST['accion'] == "nuevoPrestamo") {
                 $usuario = $_REQUEST['usuario'];
                 $libro = $_REQUEST['libro'];
@@ -68,6 +57,7 @@
                 ControladorPrestamo::nuevoPrestamo($usuario, $libro, $fechaInicio, $fechaFin, $estado);
             }
 
+            // Modificamos prestamo
             if ($_REQUEST['accion'] == "modificarPrestamo") {
                 $id = $_REQUEST['id'];
                 $fechaFin = $_REQUEST['fechaFin'];
@@ -76,24 +66,23 @@
                 ControladorPrestamo::modificarPrestamo($id, $fechaFin, $estado);
             }
 
-            // Al intentar poner eliminar se tuerce todoooooooooooooooooooooooooooo
-            // if ($_REQUEST['accion'] == "eliminarPrestamo") {
-            //     $id = $_REQUEST['id'];
+            // Eliminamos prestamo
+            if ($_REQUEST['accion'] == "eliminarPrestamo") {
+                $id = $_REQUEST['id'];
 
-            //     ControladorPrestamo::eliminarPrestamo($id);
-            // }
-
-            if ($_REQUEST['accion'] == "buscarDNI") {
-                
+                ControladorPrestamo::eliminarPrestamo($id);
             }
+            
         }
 
+        // Buscamos por DNI
         if (isset($_REQUEST['buscarDNI'])) {
             $dni = filtrado($_REQUEST['buscadorDNI']);
                 
             ControladorPrestamo::buscarPrestamosDNI($dni);
         }
 
+        // Buscamos por estado
         if (isset($_REQUEST['buscarEstado'])) {
             $estado = filtrado($_REQUEST['buscadorEstado']);
                 

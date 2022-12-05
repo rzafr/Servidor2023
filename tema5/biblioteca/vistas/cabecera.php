@@ -12,16 +12,16 @@
     <title>Proyectos PHP</title>
 
     <!-- Custom fonts for this template -->
-    <link href="./plantillas/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./vistas/plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./plantillas/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./vistas/plantilla/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="./plantillas/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="./vistas/plantilla/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -46,7 +46,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="proyectos.php">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Inicio</span></a>
             </li>
@@ -71,8 +71,6 @@
                         <h6 class="collapse-header">OPCIONES:</h6>
                         <!-- Se agrega data-toggle y data-target para el modal  data-toggle="modal" data-target="#nuevo"-->
                         <a class="collapse-item" href="enrutador.php?accion=verFormularioNuevoPrestamo">Añadir prestamo</a>
-                            
-                        <a class="collapse-item" href="controlador.php?accion=eliminarTodo">Eliminar todos</a>
                     </div>
                 </div>
             </li>
@@ -142,64 +140,3 @@
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Prestamos</h1>
-
-                    
-
-<!-- QUITAR A PARTIR DE AQUÍ SI NO LO USAS -->
-
-
-<!-- Formulario modal -->
-<div class='modal fade' id='nuevo'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <div class='modal-header'>
-                <div class='modal-title'>
-                    <h1 class='h4 text-gray-900 mb-4'>Nuevo proyecto</h1>
-                </div>            
-            </div>
-            <div class='modal-body'>
-                <div class='container-fluid'>
-                    <form method='post' class='user' action='controlador.php'>
-                        <div class='form-group'>
-                            <input type='hidden' name='nuevo' class='form-control form-control-user'
-                                value='nuevo'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='nombre'>Nombre:</label>
-                            <input type='text' name='nombre' class='form-control form-control-user'
-                                id='nombre' placeholder='Introduce el nombre...'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='fechaInicio'>Fecha de inicio:</label>
-                            <input type='date' name='fechaInicio' class='form-control form-control-user'
-                                id='fechaInicio' placeholder='DD/MM/YYYY'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='fechaFinPrevista'>Fecha de fin prevista:</label>
-                            <input type='date' name='fechaFinPrevista' class='form-control form-control-user'
-                                id='fechaFinPrevista' placeholder='DD/MM/YYYY'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='diasTranscurridos'>Dias transcurridos:</label>
-                            <input type='text' name='diasTranscurridos' class='form-control form-control-user'
-                                id='diasTranscurridos' placeholder='Días transcurridos...'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='porcentajeCompletado'>Porcentaje completado:</label>
-                            <input type='text' name='porcentajeCompletado' class='form-control form-control-user'
-                                id='porcentajeCompletado' placeholder='Porcentaje completado...'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='importancia'>Importancia:</label>
-                            <input type='text' name='importancia' class='form-control form-control-user'
-                                id='importancia' placeholder='Importancia...'>
-                        </div>
-                        <button type='submit' class='btn btn-success btn-user btn-block'>
-                            Añadir
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
