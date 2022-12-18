@@ -214,7 +214,7 @@
                 $html .= "<td>".$regaloConEnlace->getNombre()."</td>";
                 $html .= "<td>".$regaloConEnlace->getDestinatario()."</td>";
                 $html .= "<td>".$regaloConEnlace->getPrecio()."</td>";
-                $html .= "<td>".$regaloConEnlace->getEnlace()."</td>";
+                $html .= "<td>".$regaloConEnlace->enlace."</td>";
                 $html .= "</tr>";
                 $html .= "<br/>";
             }

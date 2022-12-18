@@ -37,7 +37,7 @@
             $conexion = ConexionBD::conectar();
 
             // Consulta BBDD
-            $stmt = $conexion->prepare("SELECT regalos.nombre, regalos.destinatario, regalos.precio, regalos.estado, regalos.year, enlaces.id_regalo, enlaces.enlace, enlaces.prioridad FROM regalos JOIN enlaces WHERE regalos.id_usuario = ? AND regalos.id = enlaces.id_regalo");
+            $stmt = $conexion->prepare("SELECT regalos.nombre, regalos.destinatario, regalos.precio, enlaces.enlace FROM regalos JOIN enlaces WHERE regalos.id_usuario = ? AND enlaces.id_regalo = regalos.id");
             $stmt->bindValue(1, $id_usuario);
             $stmt->execute();
 

@@ -130,17 +130,7 @@
                 $this->year = $year;
                 return $this;
         }
-
         
-
-        // El siguiente get se agrega para utilizar el enlace del join de regalos con enlaces
-
-        /**
-         * Get the value of enlade
-         */ 
-        public function getEnlace() {
-                return $this->enlace;
-        }
     }
 
 
