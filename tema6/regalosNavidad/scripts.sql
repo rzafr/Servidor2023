@@ -1,4 +1,3 @@
-CREATE SCHEMA IF NOT EXISTS `regalos` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci ;
 
 
 CREATE TABLE `usuarios` (
