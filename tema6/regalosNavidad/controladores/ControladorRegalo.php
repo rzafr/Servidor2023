@@ -14,13 +14,6 @@
         }
 
         /**
-         * Muestra el formulario para insertar regalos nuevos
-         */
-        public static function mostrarFormularioNuevoRegalo() {
-            VistaFormularioNuevoRegalo::render();
-        }
-
-        /**
          * Llama al modelo para insertar un regalo nuevo con los datos insertados en el formulario
          */
         public static function nuevoRegalo($id_usuario, $nombre, $destinatario, $precio, $estado, $year) {

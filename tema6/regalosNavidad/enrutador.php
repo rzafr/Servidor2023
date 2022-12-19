@@ -31,6 +31,37 @@
 
     spl_autoload_register("autocarga");
 
+    // Sube imagenes al servidor
+    function subirImagen() {
+
+        $directorioSubida = "vistas/img/";
+        $extensionesValidas = array("jpg", "png", "gif");
+        if(isset($_FILES['imagen'])){
+            $errores = array();
+            $nombreArchivo = $_FILES['imagen']['name'];
+            $directorioTemp = $_FILES['imagen']['tmp_name'];
+            $tipoArchivo = $_FILES['imagen']['type'];
+            $arrayArchivo = pathinfo($nombreArchivo);
+            $extension = $arrayArchivo['extension'];
+            // Comprobamos la extension del archivo
+            if(!in_array($extension, $extensionesValidas)){
+                $errores[] = "La extensión del archivo no es válida o no se ha subido ningún archivo";
+            }
+    
+            // Comprobamos y renombramos el nombre del archivo
+            $nombreArchivo = $arrayArchivo['filename'];
+            $nombreArchivo = preg_replace("/[^A-Z0-9._-]/i", "_", $nombreArchivo);
+            $nombreArchivo = $nombreArchivo . rand(1, 100);
+            // Desplazamos el archivo si no hay errores
+            if(empty($errores)){
+                $nombreCompleto = $directorioSubida.$nombreArchivo.".".$extension;
+                move_uploaded_file($directorioTemp, $nombreCompleto);
+                //print "El archivo se ha subido correctamente";
+            }
+        }
+
+        return $nombreCompleto;
+    }
 
     // Filtra los campos del formulario
     function filtrado($datos) {
@@ -72,11 +103,6 @@
             if ($_REQUEST['accion'] == "mostrarRegalos") {
                 $id_usuario = unserialize($_SESSION['usuario'])->getId();
                 ControladorRegalo::mostrarRegalos($id_usuario);
-            }
-
-            // Mostramos formulario nuevo regalo 
-            if ($_REQUEST['accion'] == "verFormularioNuevoRegalo") {
-                ControladorRegalo::mostrarFormularioNuevoRegalo();
             }
 
             // Insertamos regalo nuevo en la base de datos
@@ -123,7 +149,33 @@
                 ControladorEnlace::mostrarEnlaces($id_regalo);
             }
 
-            
+            // Vemos los enlaces de un regalo ordenados por precio ascendente
+            if ($_REQUEST['accion'] == "ordenarEnlacesPrecio") {
+                $id_regalo = filtrado($_REQUEST["id"]);
+                ControladorEnlace::mostrarEnlacesPorPrecio($id_regalo);
+            }
+
+            // Insertamos nuevo enlace
+            if ($_REQUEST['accion'] == "nuevoEnlace") {
+                $id_regalo = filtrado($_REQUEST["id_regalo"]);
+
+                $nombre = filtrado($_REQUEST['nombre']);
+                $enlace = filtrado($_REQUEST['enlace']);
+                $precio = filtrado($_REQUEST['precio']);
+
+                $imagen = subirImagen();
+
+                $prioridad = filtrado($_REQUEST['prioridad']);
+                ControladorEnlace::nuevoEnlace($id_regalo, $nombre, $enlace, $precio, $imagen, $prioridad);
+            }
+
+            // Eliminamos enlace
+            if ($_REQUEST['accion'] == "eliminarEnlace") {
+                $id_enlace = filtrado($_REQUEST['id']);
+                $id_regalo = filtrado($_REQUEST['id_regalo']);
+                ControladorEnlace::eliminarEnlace($id_enlace, $id_regalo);
+            }
+
         }
 
         // Buscamos por year

@@ -27,21 +27,107 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+    <!-- Formulario modal nuevo regalo -->
+    <div class='modal fade' id='nuevoRegalo'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <div class='modal-title'>
+                        <h1 class='h4 text-gray-900 mb-4'>Nuevo regalo</h1>
+                    </div>            
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class='modal-body'>
+                    <div class='container-fluid'>
+                        <form id="nuevoRegaloForm">
+                            <div class='form-group'>
+                                <input type='hidden' name='accion' class='form-control form-control-user'
+                                    value='nuevoRegalo'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='nombre'>Nombre:</label>
+                                <input type='text' name='nombre' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='destinatario'>Destinatario:</label>
+                                <input type='text' name='destinatario' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='Precio'>Precio:</label>
+                                <input type='text' name='precio' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                            <label for='estado'>Estado:</label>
+                                <select name='estado' class='form-control'>
+                                    <option value='Pendiente' selected>Pendiente</option>
+                                    <option value='Comprado'>Comprado</option>
+                                    <option value='Envuelto'>Envuelto</option>
+                                    <option value='Entregado'>Entregado</option>
+                                </select>
+                            </div>
+                            <div class='form-group'>
+                                <label for='year'>Año:</label>
+                                <input type='text' name='year' class='form-control'>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-success" href="login.php">Logout</a>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-success" formaction="enrutador.php" formmethod="POST" form="nuevoRegaloForm">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario modal nuevo enlace -->
+    <div class='modal fade' id='nuevoEnlace'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <div class='modal-title'>
+                        <h1 class='h4 text-gray-900 mb-4'>Nuevo enlace</h1>
+                    </div>            
+                </div>
+                <div class='modal-body'>
+                    <div class='container-fluid'>
+                        <form id="nuevoEnlaceForm" enctype="multipart/form-data">
+                            <div class='form-group'>
+                                <input type='hidden' name='accion' class='form-control form-control-user'
+                                    value='nuevoEnlace'>
+                            </div>
+                            <?php
+                                // Leemos $_GET[id] que lleva el id de regalo
+                                if (isset($_GET['id'])) {
+                                    echo "<input type='hidden' name='id_regalo' value='".$_GET['id']."'>";
+                                }
+
+                            ?>
+                            <div class='form-group'>
+                                <label for='nombre'>Nombre:</label>
+                                <input type='text' name='nombre' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='enlace'>Enlace:</label>
+                                <input type='text' name='enlace' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='Precio'>Precio:</label>
+                                <input type='text' name='precio' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='imagen'>Imagen:</label>
+                                <input type='file' name='imagen' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='prioridad'>Prioridad:</label>
+                                <input type='range' name='prioridad' class='form-control' min="0" max="2">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-success" formaction="enrutador.php" formmethod="POST" form="nuevoEnlaceForm">Agregar</button>
                 </div>
             </div>
         </div>

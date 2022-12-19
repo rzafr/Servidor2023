@@ -4,52 +4,45 @@
 
         public static function render($enlaces) {
 
-        //   echo '<div class="card" style="width: 18rem;">
-        //   <img src="vistas/img/honey.png" class="card-img-top" alt="...">
-        //   <div class="card-body">
-        //     <h5 class="card-title">Card title</h5>
-        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card content.</p>
-        //     <a href="#" class="btn btn-primary">Go somewhere</a>
-        //   </div>
-        // </div>';
-
             include("./vistas/cabecera.php");
 
-            //Boton de agregar enlaces 
+            // Botones de ordenar y de agregar enlaces si el ususario se ha logueado
             if (isset($_SESSION['usuario'])) {
-              echo '<button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#nuevoEnlace">
-              Nuevo enlace
-              </button>';
+              echo '<div class="row justify-content-end">
+                        <div class="col-3">';
+                        //if (isset($_GET['id'])) {
+                            echo '<a href="enrutador.php?accion=ordenarEnlacesPrecio&id='.$_GET['id'].'" type="button" class="btn btn-success text-white m-3">Ordenar por precio</a>';
+                        //}
+                        echo '</div>
+                      <div class="col-2">
+                        <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#nuevoEnlace">
+                          Nuevo enlace
+                        </button>
+                      </div>
+                    </div>';
             }
 
-
-
-                //INSERTAR FORMULARIO NUEVO ENLACE
-
-
-
-
-
+            // Pintamos los cards de los enlaces
             echo '<div class="row">';
-              foreach($enlaces as $enlace) {
-                echo '<div class="col-4 me-4">
-                <div class="card shadow-sm">
-                <img src='.$enlace->getImagen().' width="100%" height="400px"/>
-                  <div class="card-body">
-                    <p class="card-text">'.$enlace->getNombre().'</p>
-                    <p class="card-text"><a href="'.$enlace->getEnlace().'">Ver en tienda</a></p>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <a href="enrutador.php?accion=verPelicula&id='.$enlace->getId().'" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                      </div>
-                      <small class="text-muted">Precio: '.$enlace->getPrecio().' €</small>
-                    </div>
-                  </div>
-                </div>
-              </div>';
-              }
-
+                foreach($enlaces as $enlace) {
+                    echo '<div class="col-4 ms-4 my-4">
+                        <div class="card shadow-sm">
+                            <img src='.$enlace->getImagen().' width="100%" height="400px"/>
+                                <div class="card-body">
+                                  <p class="card-text">'.$enlace->getNombre().'</p>
+                                  <p class="card-text"><a href="'.$enlace->getEnlace().'">Ver en tienda</a></p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-danger" href="./enrutador.php?accion=eliminarEnlace&id='.$enlace->getId().'&id_regalo='.$enlace->getId_regalo().'" role="button">
+                                            Eliminar
+                                        </a>
+                                    </div>
+                                    <small class="text-muted">Precio: '.$enlace->getPrecio().' €</small>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>';
+                }
             echo "</div>";
 
             include("./vistas/pie.php");

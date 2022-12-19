@@ -61,9 +61,7 @@
                         <h6 class="collapse-header">OPCIONES:</h6>
                         <a class="collapse-item" href="enrutador.php?accion=mostrarRegalos">Mostrar regalos</a>
                         
-                        <a class="collapse-item" href="enrutador.php?accion=verFormularioNuevoRegalo">Nuevo regalo</a>
-                            
-                        <a class="collapse-item" href="enrutador.php?accion=eliminarTodo">Eliminar todos</a>
+                        <a class="collapse-item" data-bs-toggle="modal" data-bs-target="#nuevoRegalo" href="#">Nuevo regalo</a>
 
                         <a class="collapse-item" href="enrutador.php?accion=generarPDF">Generar PDF</a>
                     </div>
