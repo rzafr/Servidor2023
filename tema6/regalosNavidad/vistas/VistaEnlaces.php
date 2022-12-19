@@ -10,9 +10,7 @@
             if (isset($_SESSION['usuario'])) {
               echo '<div class="row justify-content-end">
                         <div class="col-3">';
-                        if (isset($_GET['id'])) {
                             echo '<a href="enrutador.php?accion=ordenarEnlacesPrecio&id='.$_GET['id'].'" type="button" class="btn btn-success text-white m-3">Ordenar por precio</a>';
-                        }
                         echo '</div>
                       <div class="col-2">
                         <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#nuevoEnlace">
