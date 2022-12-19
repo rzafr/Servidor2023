@@ -1,0 +1,55 @@
+CREATE TABLE `jugadores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `password` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `nombre` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `apodo` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `nivel` tinyint(1) DEFAULT NULL,
+  `edad` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+
+CREATE TABLE `partidas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` date DEFAULT NULL,
+  `hora` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `ciudad` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `lugar` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `cubierta` tinyint(1) DEFAULT NULL,
+  `estado` varchar(45) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `id_jugador1` int(11) DEFAULT NULL,
+  `id_jugador2` int(11) DEFAULT NULL,
+  `id_jugador3` int(11) DEFAULT NULL,
+  `id_jugador4` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_jugador1_idx` (`id_jugador1`),
+  KEY `fk_jugador2_idx` (`id_jugador2`),
+  KEY `fk_jugador3_idx` (`id_jugador3`),
+  KEY `fk_jugador4_idx` (`id_jugador4`),
+  CONSTRAINT `fk_jugador1` FOREIGN KEY (`id_jugador1`) REFERENCES `jugadores` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_jugador2` FOREIGN KEY (`id_jugador2`) REFERENCES `jugadores` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_jugador3` FOREIGN KEY (`id_jugador3`) REFERENCES `jugadores` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_jugador4` FOREIGN KEY (`id_jugador4`) REFERENCES `jugadores` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('juan@email.com', '1111', 'Juan', 'Juanico', '3', '30');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('cristina@email.com', '2222', 'Cristina', 'Cris', '4', '25');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('manuel@email.com', '3333', 'Manuel', 'Manu', '2', '36');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('julia@email.com', '4444', 'Julia', 'Julieta', '1', '20');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('jose@email.com', '5555', 'Jose', 'Joselito', '5', '22');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('maria@email.com', '6666', 'Maria', 'Mari', '2', '25');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('felipe@email.com', '7777', 'Felipe', 'Philip', '3', '33');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('luisa@email.com', '8888', 'Luisa', 'Luisa', '1', '29');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('roberto@email.com', '9999', 'Roberto', 'Robert', '5', '25');
+INSERT INTO `padelea`.`jugadores` (`email`, `password`, `nombre`, `apodo`, `nivel`, `edad`) VALUES ('dolores@email.com', '1010', 'Dolores', 'Loli', '3', '34');
+
+INSERT INTO `padelea`.`partidas` (`fecha`, `hora`, `ciudad`, `lugar`, `cubierta`, `estado`, `id_jugador1`) VALUES ('2022-11-30', '18:00', 'Vera', 'Vera Playa', '1', 'abierta', '2');
+INSERT INTO `padelea`.`partidas` (`fecha`, `hora`, `ciudad`, `lugar`, `cubierta`, `estado`, `id_jugador1`) VALUES ('2022-12-20', '10:00', 'Cuevas', 'Polideportivo', '1', 'abierta', '2');
+INSERT INTO `padelea`.`partidas` (`fecha`, `hora`, `ciudad`, `lugar`, `cubierta`, `estado`, `id_jugador1`, `id_jugador2`) VALUES ('2022-12-26', '12:00', 'Cuevas', 'Poligono', '1', 'abierta', '4', '5');
+INSERT INTO `padelea`.`partidas` (`fecha`, `hora`, `ciudad`, `lugar`, `cubierta`, `estado`, `id_jugador1`, `id_jugador2`) VALUES ('2022-12-23', '18:00', 'Terreros', 'Mar de Pulpi', '0', 'abierta', '6', '7');
+
+
+
