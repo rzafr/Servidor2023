@@ -19,7 +19,7 @@
         /**
          * Constructor
          */
-        public function __construct($fecha = "", $hora = "", $ciudad = "", $lugar = "", $cubierta = "", $estado = "". $id_jugador1 = "", $id_jugador2 = "", $id_jugador3 = "", $id_jugador4 = "") {
+        public function __construct($fecha = "", $hora = "", $ciudad = "", $lugar = "", $cubierta = "", $estado = "", $id_jugador1 = "", $id_jugador2 = "", $id_jugador3 = "", $id_jugador4 = "") {
             $this->fecha = $fecha;
             $this->hora = $hora;            
             $this->ciudad = $ciudad;
