@@ -13,7 +13,7 @@
             
             try {
                 //CONEXIÓN A MONGODB CLOUD ATLAS. Comentar esta línea para conectar en local.
-                $host = "mongodb+srv://admin:GMqeq91lquHBgB91@cluster0.riicpti.mongodb.net/?retryWrites=true&w=majority";
+                $host = "mongodb+srv://admin:GMqeq91lquHBgB91@cluster0.riicpti.mongodb.net/test";
                 //$host = "mongodb://root:toor@mongo:27017/"; //MongoDB en Docker
                 self::$conexion = (new Client($host))->{$bd};
             } catch (Exception $e){
