@@ -79,7 +79,7 @@
             $response = $client->request('POST', 'https://api.openai.com/v1/images/generations', [
             'body' => '{"prompt": "'.$textoImagen.'", "size": "1024x1024", "n": 1}',
             'headers' => [
-                'Authorization' => 'Bearer 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',
+                'Authorization' => '',
                 'accept' => 'application/json',
                 'content-type' => 'application/json',
             ],
