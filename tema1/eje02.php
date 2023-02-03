@@ -11,7 +11,7 @@
             <?php
 
                 $cadena1 = "Hola a todo el mundo";
-                $cadena2 = "mi nombre es Rubén Zafra Ramírez";
+                $cadena2 = "mi nombre es Rubén";
 
                 echo $cadenn3 = $cadena1 . " " . $cadena2;
                 echo "<br>";
